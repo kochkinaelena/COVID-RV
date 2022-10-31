@@ -1,0 +1,401 @@
+<!DOCTYPE html><html>
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<style>
+	body {
+		padding-left: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.boxed {
+	        border:1px solid rgba(0, 0, 0, 0.3);
+	        padding: 5px;
+	    
+	}
+	
+	div {
+    width: 800px;
+    word-wrap: break-word;
+   }
+   
+   .flag {
+  text-align: right;
+  font-size: small;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+  
+}
+
+.flag2 {
+  text-align: left;
+  font-size: small;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+  
+}
+	
+</style>
+
+<crowd-form>
+    
+    <div>
+        <h1>Instructions</h1>
+	<p>For each tweet tag whether it is discussing the topic of the given claim (relevant) or not (not relevant).</p>
+	<p style="color:#FF0000";> <u> <i>  Please click on the button below to view the full instructions below before starting the task </i> </u></p>
+    </div>
+    
+    <crowd-modal
+    link-text = "View instructions"
+    link-type = "button">
+        <hr>
+        <h1>Instructions</h1>
+        <hr>
+        <h2>Goals</h2>
+        <p> You will be given a claim and a list of tweets. Your task is to <b>tag whether the tweet is relevant to the given claim</b>, ie. whether the tweet and the claim are closely connected. </p>
+        <p> 
+        <b>The relevance of each tweet should be judged based on its connection to the specific claim rather than the general topic of coronavirus COVID-19.</b></p>
+               
+        <p><b>Relevant tweets do not have to agree with the claim, but they have to discuss the main topic of the claim.</b> 
+        Tweets conveying sarcastic or joking sentiment should not be excluded as they could also be relevant.</p> 
+
+        <p>Relevance should not be judged on the basis of the annotator’s personal views towards the topic.</p>
+    
+        <p> Choosing a <b>"relevant" or "not relevant" option for each tweet is compulsory</b>.   </p>
+        
+        <h2>External Links</h2>
+        <p> <b>If a tweet contains a link</b>, the contents of the link can be used to identify the relevance of the tweet to the claim. 
+        To access the link copy-paste it into your browser. <b>If you opened a link, please tick the box under the tweet to indicate that</b>.  
+        Please be advised that the Requester has not checked the content of links included in the tweets.</p> 
+        
+        
+        <h2>Issues and Comments </h2>
+        <p> <b>If there is an issue</b> with annotating a claim-tweet pair, there is an option to flag it using the checkbox in the right bottom corner of the box bounding each tweet. This includes blank text, text in a different language and inappropriate content. </p>
+        
+        <p> <b>If you have any comment regarding the task</b> or a particular instance there is a free text comment form at the bottom of the page. </p>    
+
+        <hr>
+        <h1>Examples: </h1>
+        <hr>
+        
+         <p><b>(1)</b></p>
+        <p><b>Claim:</b> Coronavirus is caused by 5G.</p>
+        <p><b>Tweet:</b> Expand your thinking.
+Optogenetic tech is literal mind control via *light*
+combined with a GMO receptor cell which can be introduced
+into the body on the back of a *virus.*
+5G transmit/receive.
+Coronavirus + 5G in Wuhan. ??
+Experiment? Gone wrong? </p>
+        <p><b>Tag:</b> <span style="color:purple";>Relevant</span></p>
+        <p> <b>Explanation:</b> The tweet supports the idea that 5G transmits coronavirus</p>
+        
+        <p> <b>(2)</b></p>
+        <p> <b>Claim:</b> Coronavirus is caused by 5G. </p>
+        <p> <b>Tweet:</b> 5G does not cause coronavirus, the theory is hilariously bad, but we'll explain why it's bad:
+Coronavirus spreads from human to human, that's why social distancing stopped the disease in South Korea.
+Also evil phone companies wouldn't implement something harmful for themselves. </p>
+        <p> <b>Tag:</b> <span style="color:purple";>Relevant</span></p>
+       <p> <b>Explanation:</b> The tweet exlpains that coronavirus is not caused by 5G </p>
+       
+       <p> <b>(3)</b></p>
+       <p> <b>Claim:</b> Coronavirus is caused by 5G.</p>
+       <p> <b>Tweet:</b> Coronavirus causes ‘upheaval and uncertainty’ for toy manufacturers </p>
+       <p> <b>Tag:</b> <span style="color:orange";>Not Relevant</span></p>
+         <p> <b>Explanation:</b> The tweet talks about toy manufacturers, not 5G being the cause of COVID-19</p>
+        
+        <p><b>(4)</b></p>
+        <p><b>Claim:</b> Coronavirus is caused by 5G.  </p>
+        <p><b>Tweet:</b> Vodafone to remove Huawei from core of its European network after UK decision to restrict Chinese company role in 5G 
+   Huawei is telecom coronavirus,you never know which part being infiltrated unless it is banned from all systems.</p>
+        <p><b>Tag:</b> <span style="color:orange";>Not Relevant</span></p>
+        <p> <b>Explanation:</b> The tweet talks about Huawei and 5G, not the causes of COVID-19</p>
+        
+       
+        
+        <hr>
+    </crowd-modal>
+    
+    <div>
+    
+    </div>
+    <hr>
+    <div>
+        <h3>Claim 1</h3>
+    	<h3><u>${claim1}</u></h3>
+    </div>
+    
+    <div>
+        <h3>Tweets</h3>
+        
+    	<div class="boxed">
+    	${c1tweet0}
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c1t0" name="c1relevance1" value="relevant" required>
+            <label for="c1t0"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c1t0n" name="c1relevance1" value="not_relevant" required>
+            <label for="c1t0n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+             <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c1t0" id="checkboxes2-c1t0" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc1t0" id="checkboxes-c1t0" value="1">  </div>
+             
+    	</div>
+    	<br>
+    	<div class="boxed">
+    	${c1tweet1}
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c1t1" name="c1relevance2" value="relevant" required>
+            <label for="c1t1"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c1t1n" name="c1relevance2" value="not_relevant" required>
+            <label for="c1t1n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c1t1" id="checkboxes2-c1t1" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc1t1" id="checkboxes-c1t1" value="1">  </div>
+        </div>
+        <br>
+    	<div class="boxed">
+    	${c1tweet2}
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c1t2" name="c1relevance3" value="relevant" required>
+            <label for="c1t2"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c1t2n" name="c1relevance3" value="not_relevant" required>
+            <label for="c1t2n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c1t2" id="checkboxes2-c1t2" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc1t2" id="checkboxes-c1t2" value="1">  </div>
+        </div>
+        <br>
+        <div class="boxed">
+        ${c1tweet3}
+        <br>
+        <br>
+    	    <div>
+            <input type="radio" id="c1t3" name="c1relevance4" value="relevant" required>
+            <label for="c1t3"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c1t3n" name="c1relevance4" value="not_relevant" required>
+            <label for="c1t3n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c1t3" id="checkboxes2-c1t3" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc1t3" id="checkboxes-c1t3" value="1">  </div>
+        </div>
+        <br>
+        <div class="boxed">
+        ${c1tweet4}
+        <br>
+        <br>
+    	    <div>
+            <input type="radio" id="c1t4" name="c1relevance5" value="relevant" required>
+            <label for="c1t4"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c1t4n" name="c1relevance5" value="not_relevant" required>
+            <label for="c1t4n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c1t4" id="checkboxes2-c1t4" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc1t4" id="checkboxes-c1t4" value="1">  </div>
+        </div>
+    </div>
+<hr>
+    <div>
+        <h3>Claim 2</h3>
+    	<h3><u>${claim2}</u></h3>
+    </div>
+    
+    <div>
+        <h3>Tweets</h3>
+    	
+    	<div class="boxed">
+    	${c2tweet0} 
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c2t0" name="c2relevance1" value="relevant" required>
+            <label for="c2t0"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c2t0n" name="c2relevance1" value="not_relevant" required>
+            <label for="c2t0n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c2t0" id="checkboxes2-c2t0" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc2t0" id="checkboxes-c2t0" value="1">  </div>
+    	</div>
+    	<br>
+    	<div class="boxed">
+    	${c2tweet1}
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c2t1" name="c2relevance2" value="relevant" required>
+            <label for="c2t1"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c2t1n" name="c2relevance2" value="not_relevant" required>
+            <label for="c2t1n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+             <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c2t1" id="checkboxes2-c2t1" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc2t1" id="checkboxes-c2t1" value="1">  </div>
+        </div>
+        <br>
+    	<div class="boxed">
+    	${c2tweet2}
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c2t2" name="c2relevance3" value="relevant" required>
+            <label for="c2t2"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c2t2n" name="c2relevance3" value="not_relevant" required>
+            <label for="c2t2n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+             <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c2t2" id="checkboxes2-c2t2" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc2t2" id="checkboxes-c2t2" value="1">  </div>
+        </div>
+        <br>
+        <div class="boxed">
+        ${c2tweet3}
+        <br>
+        <br>
+    	    <div>
+            <input type="radio" id="c2t3" name="c2relevance4" value="relevant" required>
+            <label for="c2t3"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c2t3n" name="c2relevance4" value="not_relevant" required>
+            <label for="c2t3n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+             <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c2t3" id="checkboxes2-c2t3" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc2t3" id="checkboxes-c2t3" value="1">  </div>
+        </div>
+        <br>
+        <div class="boxed">
+        ${c2tweet4}
+        <br>
+        <br>
+    	    <div>
+            <input type="radio" id="c2t4" name="c2relevance5" value="relevant" required>
+            <label for="c2t4"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c2t4n" name="c2relevance5" value="not_relevant" required>
+            <label for="c2t4n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+             <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c2t4" id="checkboxes2-c2t4" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc2t4" id="checkboxes-c2t4" value="1">  </div>
+        </div>
+    </div>
+	    <hr>
+    <div>
+        <h3>Claim 3</h3>
+    	<h3><u>${claim3}</u></h3>
+    </div>
+    
+    <div>
+        <h3>Tweets</h3>
+    	
+    	<div class="boxed">
+    	${c3tweet0} 
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c3t0" name="c3relevance1" value="relevant" required>
+            <label for="c3t0"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c3t0n" name="c3relevance1" value="not_relevant" required>
+            <label for="c3t0n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c3t0" id="checkboxes2-c3t0" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc3t0" id="checkboxes-c3t0" value="1">  </div>
+    	</div>
+    	<br>
+    	<div class="boxed">
+    	${c3tweet1}
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c3t1" name="c3relevance2" value="relevant" required>
+            <label for="c3t1"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c3t1n" name="c3relevance2" value="not_relevant" required>
+            <label for="c3t1n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c3t1" id="checkboxes2-c3t1" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc3t1" id="checkboxes-c3t1" value="1">  </div>
+        </div>
+        <br>
+    	<div class="boxed">
+    	${c3tweet2}
+    	<br>
+    	<br>
+    	    <div>
+            <input type="radio" id="c3t2" name="c3relevance3" value="relevant" required>
+            <label for="c3t2"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c3t2n" name="c3relevance3" value="not_relevant" required>
+            <label for="c3t2n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c3t2" id="checkboxes2-c3t2" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc3t2" id="checkboxes-c3t2" value="1">  </div>
+        </div>
+        <br>
+        <div class="boxed">
+        ${c3tweet3}
+        <br>
+        <br>
+    	    <div>
+            <input type="radio" id="c3t3" name="c3relevance4" value="relevant" required>
+            <label for="c3t3"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c3t3n" name="c3relevance4" value="not_relevant" required>
+            <label for="c3t3n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c3t3" id="checkboxes2-c3t3" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc3t3" id="checkboxes-c3t3" value="1">  </div>
+        </div>
+        <br>
+        <div class="boxed">
+        ${c3tweet4}
+        <br>
+        <br>
+    	    <div>
+            <input type="radio" id="c3t4" name="c3relevance5" value="relevant" required>
+            <label for="c3t4"><span style="color:purple";>Relevant</span></label>
+            <input type="radio" id="c3t4n" name="c3relevance5" value="not_relevant" required>
+            <label for="c3t4n"><span style="color:orange";>Not Relevant</span></label>
+            </div>
+            <br>
+            <div class="flag2">  <input type="checkbox" name="checkboxes2c3t4" id="checkboxes2-c3t4" value="1"> tick if you opened a link in the tweet </div>
+            
+            <div class="flag">  &#128681 flag an issue with this tweet <input type="checkbox" name="checkboxesc3t4" id="checkboxes-c3t4" value="1">  </div>
+        </div>
+        <br>
+    </div>	    
+    
+<hr>
+<br>
+    <p>Do you have any comments on this task? (optional)</p>
+	<crowd-text-area name="explanation" placeholder="Comments...">
+	</crowd-text-area>
+	<br>
+    </div>
+</crowd-form>
+<br>
+<br>
+</html>

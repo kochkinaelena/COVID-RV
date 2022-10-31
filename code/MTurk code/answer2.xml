@@ -1,0 +1,93 @@
+<AnswerKey xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/AnswerKey.xsd">
+  <Question>
+  <QuestionIdentifier>test1</QuestionIdentifier>
+  <AnswerOption>
+      <SelectionIdentifier>rg1</SelectionIdentifier>
+      <AnswerScore>0</AnswerScore>
+    </AnswerOption>
+    <AnswerOption>
+      <SelectionIdentifier>by1</SelectionIdentifier>
+      <AnswerScore>1</AnswerScore>
+    </AnswerOption>
+   </Question>
+
+<Question>
+  <QuestionIdentifier>test2</QuestionIdentifier>
+  <AnswerOption>
+      <SelectionIdentifier>rg2</SelectionIdentifier>
+      <AnswerScore>1</AnswerScore>
+    </AnswerOption>
+    <AnswerOption>
+      <SelectionIdentifier>by2</SelectionIdentifier>
+      <AnswerScore>0</AnswerScore>
+    </AnswerOption>
+   </Question>
+
+
+<Question>
+  <QuestionIdentifier>test3</QuestionIdentifier>
+  <AnswerOption>
+      <SelectionIdentifier>rg3</SelectionIdentifier>
+      <AnswerScore>1</AnswerScore>
+    </AnswerOption>
+    <AnswerOption>
+      <SelectionIdentifier>by3</SelectionIdentifier>
+      <AnswerScore>0</AnswerScore>
+    </AnswerOption>
+   </Question>
+
+
+<Question>
+  <QuestionIdentifier>test4</QuestionIdentifier>
+  <AnswerOption>
+      <SelectionIdentifier>rg4</SelectionIdentifier>
+      <AnswerScore>1</AnswerScore>
+    </AnswerOption>
+    <AnswerOption>
+      <SelectionIdentifier>by4</SelectionIdentifier>
+      <AnswerScore>0</AnswerScore>
+    </AnswerOption>
+   </Question>
+
+<Question>
+  <QuestionIdentifier>test5</QuestionIdentifier>
+  <AnswerOption>
+      <SelectionIdentifier>rg5</SelectionIdentifier>
+      <AnswerScore>0</AnswerScore>
+    </AnswerOption>
+    <AnswerOption>
+      <SelectionIdentifier>by5</SelectionIdentifier>
+      <AnswerScore>1</AnswerScore>
+    </AnswerOption>
+   </Question>
+
+<Question>
+  <QuestionIdentifier>test6</QuestionIdentifier>
+  <AnswerOption>
+      <SelectionIdentifier>rg6</SelectionIdentifier>
+      <AnswerScore>0</AnswerScore>
+    </AnswerOption>
+    <AnswerOption>
+      <SelectionIdentifier>by6</SelectionIdentifier>
+      <AnswerScore>1</AnswerScore>
+    </AnswerOption>
+   </Question>
+
+<Question>
+  <QuestionIdentifier>test7</QuestionIdentifier>
+  <AnswerOption>
+      <SelectionIdentifier>rg7</SelectionIdentifier>
+      <AnswerScore>0</AnswerScore>
+    </AnswerOption>
+    <AnswerOption>
+      <SelectionIdentifier>by7</SelectionIdentifier>
+      <AnswerScore>1</AnswerScore>
+    </AnswerOption>
+   </Question>
+
+<QualificationValueMapping>
+  <PercentageMapping>
+    <MaximumSummedScore>7</MaximumSummedScore>
+  </PercentageMapping>
+</QualificationValueMapping>
+</AnswerKey>

@@ -1,0 +1,242 @@
+ <QuestionForm xmlns='http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/QuestionForm.xsd'>
+<Overview>
+<FormattedContent><![CDATA[
+
+        <h1>Instructions</h1>
+	        
+        <p> <b>Tag whether the tweet is relevant to the given claim</b>, ie. whether the tweet is discussing the main topic of the claim. </p>
+        <p> 
+        <b>The relevance of each tweet should be judged based on its connection to the specific claim rather than the general topic of coronavirus COVID-19.</b></p>
+               
+        <p><b>Relevant tweets do not have to agree with the claim, but they have to discuss the main topic of the claim.</b> 
+        Tweets conveying sarcastic or joking sentiment should not be excluded as they could also be relevant.</p> 
+
+        <p>Relevance should not be judged on the basis of the annotator’s personal views towards the topic.</p>
+
+<h1>Examples: </h1>
+        
+         <p><b>(1)</b></p>
+        <p><b>Claim:</b> Coronavirus is caused by 5G.</p>
+        <p><b>Tweet:</b> Expand your thinking.
+Optogenetic tech is literal mind control via *light*
+combined with a GMO receptor cell which can be introduced
+into the body on the back of a *virus.*
+5G transmit/receive.
+Coronavirus + 5G in Wuhan. ??
+Experiment? Gone wrong? </p>
+        <p><b>Tag:</b> Relevant</p>
+        <p> <b>Explanation:</b> The tweet supports the idea that 5G transmits coronavirus</p>
+        
+        <p> <b>(2)</b></p>
+        <p> <b>Claim:</b> Coronavirus is caused by 5G. </p>
+        <p> <b>Tweet:</b> 5G does not cause coronavirus, the theory is hilariously bad, but we'll explain why it's bad:
+Coronavirus spreads from human to human, that's why social distancing stopped the disease in South Korea.
+Also evil phone companies wouldn't implement something harmful for themselves. </p>
+        <p> <b>Tag:</b> Relevant</p>
+       <p> <b>Explanation:</b> The tweet exlpains that coronavirus is not caused by 5G </p>
+       
+       <p> <b>(3)</b></p>
+       <p> <b>Claim:</b> Coronavirus is caused by 5G.</p>
+       <p> <b>Tweet:</b> Coronavirus causes ‘upheaval and uncertainty’ for toy manufacturers </p>
+       <p> <b>Tag:</b> Not Relevant</p>
+         <p> <b>Explanation:</b> The tweet talks about toy manufacturers, not 5G being the cause of COVID-19</p>
+
+<h1>Qualification Test: </h1>    
+]]></FormattedContent>
+</Overview>
+<Question>
+      <QuestionIdentifier>test1</QuestionIdentifier>
+      <DisplayName>Q1</DisplayName>
+      <IsRequired>true</IsRequired>
+    	<QuestionContent>
+	<FormattedContent><![CDATA[
+	<p><b>Claim:</b>Drinking cow urine and applying cow dung on the body can cure covid-19.</p>
+        <p><b>Tweet:</b> Getting plenty of rest, drinking fluids, eating healthy foods, and managing your stress can help you prevent getting COVID-19 and recover from it if you do.    </p>
+          	]]></FormattedContent>	
+	</QuestionContent>
+	<AnswerSpecification>
+    <SelectionAnswer>
+      <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>rg1</SelectionIdentifier>
+              <Text>Relevant</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>by1</SelectionIdentifier>
+              <Text>Not Relevant</Text>
+            </Selection>
+          </Selections>
+    </SelectionAnswer>
+</AnswerSpecification>
+</Question>  
+
+<Question>
+      <QuestionIdentifier>test2</QuestionIdentifier>
+      <DisplayName>Q2</DisplayName>
+      <IsRequired>true</IsRequired>
+    	<QuestionContent>
+	<FormattedContent><![CDATA[
+	<p> <b>Claim:</b>Coronavirus cannot be spread by practicing holy communion. </p>
+       <p> <b>Tweet:</b> "Archdiocese suspends drinking from Holy Communion Chalice due to rising coronavirus concerns &gt; 
+https://t.co/NieV4LtOyt https://t.co/nlMNVjRRNS" </p>
+
+
+
+          	]]></FormattedContent>	
+	</QuestionContent>
+	<AnswerSpecification>
+    <SelectionAnswer>
+      <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>rg2</SelectionIdentifier>
+              <Text>Relevant</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>by2</SelectionIdentifier>
+              <Text>Not Relevant</Text>
+            </Selection>
+          </Selections>
+    </SelectionAnswer>
+</AnswerSpecification>
+</Question>  
+
+<Question>
+      <QuestionIdentifier>test3</QuestionIdentifier>
+      <DisplayName>Q3</DisplayName>
+      <IsRequired>true</IsRequired>
+    	<QuestionContent>
+	<FormattedContent><![CDATA[
+	<p> <b>Claim:</b> Jim Bakker's colloidal silver solution is a remedy for COVID-19. </p>
+        <p> <b>Tweet:</b> @tempestt0st @caitoz @MrsC_Assange can we get a bottle of colloidal silver to Julian? It could save his life from COVID-19 as undoubtedly all prisoners will be at risk. #ColloidalSilver has been proven to disable HIV in the lab and this Coronavirus attacks cells in same way as HIV. #FreeAssange </p>
+          	]]></FormattedContent>	
+	</QuestionContent>
+	<AnswerSpecification>
+    <SelectionAnswer>
+      <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>rg3</SelectionIdentifier>
+              <Text>Relevant</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>by3</SelectionIdentifier>
+              <Text>Not Relevant</Text>
+            </Selection>
+          </Selections>
+    </SelectionAnswer>
+</AnswerSpecification>
+</Question>  
+ 
+<Question>
+      <QuestionIdentifier>test4</QuestionIdentifier>
+      <DisplayName>Q4</DisplayName>
+      <IsRequired>true</IsRequired>
+    	<QuestionContent>
+	<FormattedContent><![CDATA[
+	<p> <b>Claim:</b> Coronavirus is genetically engineered. </p>
+        <p> <b>Tweet:</b> @TheMadKiwi3 @goodfoodgal nah. A biological warfare agent would kill 99% of its victims, not 2% like the corona virus. This is a naturally occurring virus. </p>
+          	]]></FormattedContent>	
+	</QuestionContent>
+	<AnswerSpecification>
+    <SelectionAnswer>
+      <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>rg4</SelectionIdentifier>
+              <Text>Relevant</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>by4</SelectionIdentifier>
+              <Text>Not Relevant</Text>
+            </Selection>
+          </Selections>
+    </SelectionAnswer>
+</AnswerSpecification>
+</Question> 
+
+<Question>
+      <QuestionIdentifier>test5</QuestionIdentifier>
+      <DisplayName>Q5</DisplayName>
+      <IsRequired>true</IsRequired>
+    	<QuestionContent>
+	<FormattedContent><![CDATA[
+	<p> <b>Claim:</b> Drinking cow urine and applying cow dung on the body can cure covid-19. </p>
+        <p> <b>Tweet:</b> Whatв it like to have COVID-19? Symptoms are primarily respiratory. Coughing and shortness of breath are common, according to the CDC. Fever is also possible. The severity of the symptoms depends highly on the patientв age and immune system https://t.co/dgMsInY4ws </p>
+          	]]></FormattedContent>	
+	</QuestionContent>
+	<AnswerSpecification>
+    <SelectionAnswer>
+      <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>rg5</SelectionIdentifier>
+              <Text>Relevant</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>by5</SelectionIdentifier>
+              <Text>Not Relevant</Text>
+            </Selection>
+          </Selections>
+    </SelectionAnswer>
+</AnswerSpecification>
+</Question> 
+
+
+<Question>
+      <QuestionIdentifier>test6</QuestionIdentifier>
+      <DisplayName>Q6</DisplayName>
+      <IsRequired>true</IsRequired>
+    	<QuestionContent>
+	<FormattedContent><![CDATA[
+	<p> <b>Claim:</b> Jim Bakker's colloidal silver solution is a remedy for COVID-19. </p>
+        <p> <b>Tweet:</b> CT provides best diagnosis for COVID-19 https://t.co/8qXJ0SreDB </p>
+          	]]></FormattedContent>	
+	</QuestionContent>
+	<AnswerSpecification>
+    <SelectionAnswer>
+      <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>rg6</SelectionIdentifier>
+              <Text>Relevant</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>by6</SelectionIdentifier>
+              <Text>Not Relevant</Text>
+            </Selection>
+          </Selections>
+    </SelectionAnswer>
+</AnswerSpecification>
+</Question> 
+
+<Question>
+      <QuestionIdentifier>test7</QuestionIdentifier>
+      <DisplayName>Q7</DisplayName>
+      <IsRequired>true</IsRequired>
+    	<QuestionContent>
+	<FormattedContent><![CDATA[
+	<p> <b>Claim:</b> Coronavirus can only survive in cold temperatures. </p>
+        <p> <b>Tweet:</b> @JadedCreative Don't be dumb. coronavirus is a family of viruses.  They're not all the same. Some cause the common cold and humans have some immunity to.  This one is new, which is why they call it a "novel coronavirus" (check the dictionary for "novel" if you are unfamiliar)   </p>
+          	]]></FormattedContent>	
+	</QuestionContent>
+	<AnswerSpecification>
+    <SelectionAnswer>
+      <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>rg7</SelectionIdentifier>
+              <Text>Relevant</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>by7</SelectionIdentifier>
+              <Text>Not Relevant</Text>
+            </Selection>
+          </Selections>
+    </SelectionAnswer>
+</AnswerSpecification>
+</Question> 
+
+
+</QuestionForm>
