@@ -12,5 +12,7 @@ https://panacea2020.github.io/
 --------------
 
 Contact us by email if you have any questions about this research!
+
 e.kochkina @ qmul. ac. uk 
+
 m.liakata @ qmul. ac. uk
